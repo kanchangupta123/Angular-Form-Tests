@@ -1,0 +1,51 @@
+<div class="container">
+  <div [hidden]="submitted">
+    <h1>Hero Form</h1>
+    <form>
+        <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" #name
+               required>
+              </div>
+      <div class="form-group">
+        <label for="number">Number</label>
+        <input type="number" class="form-control" id="number" #number maxlength="10" 
+        pattern="[0-9]+">
+      </div>
+ 
+      <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" #email>
+      </div>
+
+      <div class="form-group">
+          <label for="income">income</label>
+          <input type="number" class="form-control" id="income" #income>
+      </div>
+      <button type="button" (click)="login(name.value,number.value,email.value, income.value)">
+         Submit </button>
+     <!-- <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">
+        Submit</button> 
+      <button type="button" class="btn btn-default" (click)="newHero(); heroForm.reset()">
+        New Hero</button>-->
+    </form>
+  </div>
+ 
+<!--  <div [hidden]="!submitted">
+    <h2>You submitted the following:</h2>
+    <div class="row">
+      <div class="col-xs-3">Name</div>
+      <div class="col-xs-9  pull-left">{{ model.name }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">Alter Ego</div>
+      <div class="col-xs-9 pull-left">{{ model.alterEgo }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">Power</div>
+      <div class="col-xs-9 pull-left">{{ model.power }}</div>
+    </div>
+    <br>
+    <button class="btn btn-primary" (click)="submitted=false">Edit</button>
+  </div> -->
+</div>
