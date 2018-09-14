@@ -1,36 +1,33 @@
 <div class="container">
-  <div [hidden]="submitted">
+  
     <h1>Hero Form</h1>
-    <form>
+    <form (ngSubmit)="login()" [formGroup]="form">
         <div class="form-group">
         <label for="name">Name</label>
-        <input type="text" class="form-control" id="name" #name
-               required>
+        <input type="text"  #name formControlName="name" id="name">
               </div>
       <div class="form-group">
         <label for="number">Number</label>
-        <input type="number" class="form-control" id="number" #number maxlength="10" 
-        pattern="[0-9]+">
+        <input type="number"  id="number" #number formControlName="number" maxlength="10">
       </div>
  
       <div class="form-group">
           <label for="email">Email</label>
-          <input type="email" class="form-control" #email>
+          <input type="email"  #email formControlName="email">
       </div>
 
       <div class="form-group">
           <label for="income">income</label>
-          <input type="number" class="form-control" id="income" #income>
+          <input type="number"  id="income" #income formControlName="income">
       </div>
-      <button type="button" (click)="login(name.value,number.value,email.value, income.value)">
-         Submit </button>
+      <button type="submit"> Submit </button>
      <!-- <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">
         Submit</button> 
       <button type="button" class="btn btn-default" (click)="newHero(); heroForm.reset()">
         New Hero</button>-->
     </form>
   </div>
- 
+
 <!--  <div [hidden]="!submitted">
     <h2>You submitted the following:</h2>
     <div class="row">
@@ -48,4 +45,3 @@
     <br>
     <button class="btn btn-primary" (click)="submitted=false">Edit</button>
   </div> -->
-</div>
